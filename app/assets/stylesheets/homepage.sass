@@ -1,0 +1,508 @@
+$white: #fff
+$lightGray: #333333
+$blue: #008AB8
+$lighterGray: #808080
+
+$aqua: #7FD8FF
+$navy: #001F3F
+$teal: #39CCCC
+$green: #2ECC40
+$olive: #3D9970
+$lime: #01FF70
+
+$yellow: #FFDC00
+$orange: #FF851B
+$red: #FF4136
+$fushcia: #F012BE
+$purple: #810DC9
+$maroon: #85144B
+
+$white: #fff
+$silver: #ddd
+$gray: #aaa
+$black: #111
+$bgcolor: #e5eaee
+
+body
+	margin: 0px
+	font-family: 'Open Sans', sans-serif
+
+.main
+	height: 100%
+	background: $white
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+
+
+
+.photo-container
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+
+
+.header
+	display: flex
+	justify-content: space-between
+	width: 100%
+
+nav
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+	background: $lightGray
+
+	.logo
+		margin: 5px
+
+	ul
+		display: flex
+
+
+		li
+			list-style-type: none
+			margin: 0 20px
+			justify-content: space-between
+
+	input.text
+		margin: 10px 
+
+	
+
+.navbar
+	color: lighten($lighterGray, 25%)
+	font-size: 15px
+	text-decoration: none
+	
+.navbar:hover
+	color: $teal
+
+.socialButtons
+
+	background: $lighterGray
+	border-radius: 25px
+	border-color: $lighterGray
+	border-style: solid
+	margin: 5px
+
+.socialButtons:hover
+	background: $teal
+	border-color: $teal
+
+
+h1
+	font-family: 'Open Sans', sans-serif
+	background: $teal
+	font-size: 80px
+	color: $white
+	text-align: center
+	clear: both
+	padding-top: 75px
+
+h2
+	font-family: 'Open Sans', sans-serif
+	font-size: 36px
+	color: $lightGray
+	text-align: center
+	clear: both
+	margin-top: -60px
+
+h3
+	color: $teal
+	font-family: 'Open Sans', sans-serif
+
+
+
+a
+	color: $teal
+	text-decoration: none
+
+	&:hover
+		color: $lightGray
+
+
+.section
+	padding-top: 25px
+	padding-bottom: 25px
+	text-align: center
+	text-transform: uppercase
+	color: $teal
+	letter-spacing: .5em
+	margin: 50px
+
+.alt-section
+	background: $bgcolor
+
+
+
+.work-section
+	overflow-x: hidden
+
+.thumb-wrap
+	width: 50%
+	float: left
+
+.work-wrap
+	width: 50%
+	float: left
+
+.work-belt
+	width: 200%
+	position: relative
+	left: 0%
+	+transition(all 800ms)
+
+	.work-container
+		max-width: 600px
+		margin: 0px auto
+		display: none
+
+		img
+			max-width: 100%
+			margin-bottom: 20px
+
+		h4
+			color: $lightGray
+			font-weight: 400
+			text-transform: uppercase
+			font-size: 24px
+			line-height: 1.2
+			color: $teal
+
+		.work-return
+			+size(40px)
+			cursor: pointer
+			opacity: 0.5
+		
+			&:hover
+				opacity: 1
+
+		
+
+
+
+
+	.thumb-container
+		max-width: 960px
+		margin: 0px auto
+		margin-bottom: 120px
+		+clearfix
+
+	.thumb-unit
+		display: block
+		width: 25%
+		height: 150px
+		float: left
+		position: relative
+		overflow: hidden
+		
+		background-image: url('/images/portfolio/1.jpg')
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+
+		+perspective(300)
+
+
+
+
+		.overlay
+			+position(absolute 100% 0px null 0px)
+			height: 100%
+			background: fade-out($teal, 0.1)
+			text-align: center
+			+transition
+			+display(flex)
+			+align-items(center)
+			+justify-content(space-around)
+			+transform(rotateY(90deg))
+			+transform-origin(center bottom)
+
+			strong
+				display: block
+				padding: 20px
+				color: white
+				font-weight: 300
+				text-transform: uppercase
+				size: 24px
+				line-height: 1.2
+
+		@media screen and (max-width: 760px)
+			width: 50%
+			padding-top: 20%
+
+			
+		&:hover .overlay
+			+position(absolute 0% 0px null 0px)
+			+transform(rotateX(0deg))
+
+
+	
+.aboutme
+	display: flex
+	flex-direction: column
+	justify-content: center
+	padding: 10px
+	color: $lightGray
+	max-width: 720px
+	margin: 0 auto
+	
+	
+	.label
+		text-align: center
+		text-transform: uppercase
+		color: $teal
+		letter-spacing: .5em
+		margin: 10px
+
+	
+	
+
+	.face-lockup
+		display: flex
+		justify-content: space-around
+		+align-items(center)
+		padding-top: 50px
+		
+		
+
+		.avatar
+			+size(200px)
+			+order(3)
+
+
+		.icons-pen
+			+order(5)
+		.icons-bulb
+			+order(2)
+		.icons-display
+			+order(4)
+		.icons-camera
+			+order(1)
+
+.blurb
+	display: flex
+	+align-items(center)
+	max-width: 600px
+	padding: 10px
+	margin: 0 auto
+	font-size: 24px
+	text-align: center
+
+
+.skills-lockup
+	max-width: 600px
+	margin: 50px auto 
+	padding-left: 75px
+	color: lighten($lightGray, 30%)
+	+clearfix()
+
+	.skill-unit
+		width: 270px
+		float: left
+
+	.skill-icons
+		font-size: 0
+		margin: 0px 0 30px
+		
+		span
+			display: inline-block
+			+size(14px)
+			background-color: $teal
+			margin-right: 5px
+			border-radius: 50%
+
+
+			&:after
+				content: ''
+				display: block
+				+size(10px)
+				background: white
+				border-radius: 50%
+				margin: 2px
+
+		@for $i from 1 through 10
+			&.skill-#{$i} span:nth-child(n+#{$i + 1})
+				background: $bgcolor
+			
+@media screen and (max-width: 700px)
+	.skills-lockup
+		width: 270px
+		margin: 0 auto
+		
+//contact
+
+
+.contact-section
+	display: block
+	max-width: 750px
+	margin: 50px auto
+
+	input
+		background: none
+		border: solid 2px $teal
+		color: $teal
+		padding: 20px 50px
+		font-size: 18px
+		display: inline-block
+
+		&:focus
+			outline: 0
+			-webkit-box-shadow: none
+			box-shadow: none
+
+		&:active
+			outline: 0
+
+		&[type="text"]
+			border: none
+			border-bottom: solid 2px $teal
+
+		&[type="textarea"]
+			border: none
+			border-bottom: solid 2px $teal
+
+
+
+		&[type="submit"]
+			margin-left: 100px
+			&:active
+				color: white
+				background: $teal
+			&:hover
+				color: white
+				background: $teal
+	
+
+
+	.input-group
+		
+
+
+		display: inline-block
+		margin-right: 20px
+		margin-left: 100px
+		position: relative
+
+		input
+			padding: 15px 0px
+
+		label
+			+position(absolute, 50% null null 0px)
+			+transform(translateY(-50%))
+			font:
+				family: 'Open Sans', sans-serif
+				style: italic
+				size: 18px
+			color: #999
+			pointer-events: none
+			+transition
+
+		input:focus + label
+			top: -10px
+			font-size: 12px
+			color: #aaa
+
+		input.has-value + label
+			top: -10px
+			font-size: 12px
+			color: #aaa
+
+	@media screen and (max-width: 700px)
+		.input-group
+			margin-bottom: 5px
+			
+
+
+
+
+	.social-links
+		max-width: 700px
+		margin: 0px auto 50px
+		+display(flex)
+		+justify-content(space-around)
+		
+
+		a
+			display: block
+			color: $teal
+			+size(50px)
+			text-align: center
+			line-height: 50px
+			background: $bgcolor
+			border-radius: 50%
+			font-size: 28px
+			+transition
+
+			&:hover
+				+transform(scale(1.2))
+
+	.bar
+		width: 250px
+		height: 0px
+		border-top: 4px solid $teal
+		margin: 0px auto 70px
+
+	.big-link
+		color: lighten($lightGray, 50%)
+		display: inline-block
+		text-align: center
+		margin-bottom: 70px
+		font:
+			size: 72px
+			weight: 300
+		line-height: 1
+		
+
+		&:hover
+			color: $teal
+
+		@media screen and (max-width: 800px)
+			
+			display: flex
+			justify-content: center
+			font:
+				size: 32px
+			
+
+
+
+.copyright
+	display: flex
+	tex-align: center
+	justify-content: center
+	background: $lightGray
+	font-size: 10px
+	color: $white
+	padding-bottom: 20px
+
+
+//smaller screen
+
+@media screen and (max-width: 700px)
+	#container
+		width: auto
+	.column
+		float: none
+		width: auto
+	.socialButtons
+		float: none
+		margin-top: none
+	div.connect
+		float: none
+
+	span
+		display: none
+
+	nav
+		flex-direction: column
+	
+
+	
+@media screen and (max-width: 640px)
+
+
+	
