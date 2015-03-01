@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300)
+
 $white: #fff
 $lightGray: #333333
 $blue: #008AB8
@@ -35,19 +37,6 @@ body
 	background-size: cover
 
 
-
-
-.photo-container
-	display: flex
-	justify-content: center
-	flex-wrap: wrap
-
-
-.header
-	display: flex
-	justify-content: space-between
-	width: 100%
-
 nav
 	display: flex
 	align-items: center
@@ -57,6 +46,10 @@ nav
 
 	.logo
 		margin: 5px
+
+	.title-tag
+		display: flex
+		align-items: center
 
 	ul
 		display: flex
@@ -79,6 +72,8 @@ nav
 	
 .navbar:hover
 	color: $teal
+
+
 
 .socialButtons
 
@@ -113,6 +108,9 @@ h2
 h3
 	color: $teal
 	font-family: 'Open Sans', sans-serif
+
+h4
+	color: white
 
 
 
@@ -173,6 +171,7 @@ a
 			color: $teal
 
 		.work-return
+			background-image: url(images/back.svg)
 			+size(40px)
 			cursor: pointer
 			opacity: 0.5
@@ -217,9 +216,11 @@ a
 			+transition
 			+display(flex)
 			+align-items(center)
-			+justify-content(space-around)
+			+justify-content(space-between)
 			+transform(rotateY(90deg))
 			+transform-origin(center bottom)
+
+		
 
 			strong
 				display: block
@@ -326,7 +327,7 @@ a
 
 		@for $i from 1 through 10
 			&.skill-#{$i} span:nth-child(n+#{$i + 1})
-				background: $bgcolor
+				background: lighten($lightGray, 50%)
 			
 @media screen and (max-width: 700px)
 	.skills-lockup
@@ -345,7 +346,7 @@ a
 		background: none
 		border: solid 2px $teal
 		color: $teal
-		padding: 20px 50px
+		padding: 10px 20px
 		font-size: 18px
 		display: inline-block
 
@@ -368,7 +369,11 @@ a
 
 
 		&[type="submit"]
+		
+			
 			margin-left: 100px
+			align-items: center
+			
 			&:active
 				color: white
 				background: $teal
@@ -385,10 +390,11 @@ a
 		display: inline-block
 		margin-right: 20px
 		margin-left: 100px
+		margin-bottom: 5px
 		position: relative
 
 		input
-			padding: 15px 0px
+			padding: 5px 0px
 
 		label
 			+position(absolute, 50% null null 0px)
@@ -402,18 +408,18 @@ a
 			+transition
 
 		input:focus + label
-			top: -10px
+			top: -.5px
 			font-size: 12px
 			color: #aaa
 
 		input.has-value + label
-			top: -10px
+			top: -5px
 			font-size: 12px
 			color: #aaa
 
 	@media screen and (max-width: 700px)
 		.input-group
-			margin-bottom: 5px
+			margin-bottom: 10px
 			
 
 
@@ -428,17 +434,19 @@ a
 
 		a
 			display: block
-			color: $teal
+			color: white
 			+size(50px)
 			text-align: center
 			line-height: 50px
-			background: $bgcolor
+			background: lighten($lightGray, 50%)
 			border-radius: 50%
 			font-size: 28px
 			+transition
 
 			&:hover
 				+transform(scale(1.2))
+				background: $teal
+
 
 	.bar
 		width: 250px
